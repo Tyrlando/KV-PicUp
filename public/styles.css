@@ -1,0 +1,155 @@
+:root {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #1f2937;
+  background: #f4f6fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+.container {
+  width: min(960px, 100%);
+}
+
+.panel {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.hint {
+  margin-bottom: 24px;
+  color: #4b5563;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.field input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5f5;
+  font-size: 1rem;
+}
+
+.upload {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: #eff6ff;
+  border-radius: 999px;
+  font-weight: 600;
+  color: #2563eb;
+  cursor: pointer;
+  border: 1px solid #bfdbfe;
+  margin-bottom: 20px;
+}
+
+.upload input {
+  display: none;
+}
+
+.preview-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 18px;
+  border: 2px dashed #cbd5f5;
+  overflow: hidden;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.preview-wrapper img {
+  max-width: 100%;
+  display: none;
+}
+
+.preview-wrapper.active img {
+  display: block;
+}
+
+.preview-wrapper.active .placeholder {
+  display: none;
+}
+
+.placeholder {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.controls button {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid #cbd5f5;
+  background: #ffffff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.submit {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.submit:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+.status {
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+.status.success {
+  color: #15803d;
+}
+
+.status.error {
+  color: #b91c1c;
+}
