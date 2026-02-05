@@ -1,0 +1,9 @@
+{
+  "name": "kv-picup",
+  "version": "1.0.0",
+  "description": "Image upload with crop and zoom",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
