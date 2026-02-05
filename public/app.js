@@ -106,12 +106,19 @@ submitButton.addEventListener("click", async () => {
       }),
     });
 
-    if (!response.ok) {
-      const payload = await response.json();
-      throw new Error(payload.error || "Upload fehlgeschlagen.");
+    const responseText = await response.text();
+    let payload = {};
+    if (responseText) {
+      try {
+        payload = JSON.parse(responseText);
+      } catch (parseError) {
+        payload = { error: responseText };
+      }
     }
 
-    const payload = await response.json();
+    if (!response.ok) {
+      throw new Error(payload.error || "Upload fehlgeschlagen.");
+    }
     setStatus(
       `Erfolgreich gespeichert: ${payload.fileName}`,
       "success"
